@@ -2,9 +2,9 @@ package com.pitreskikh.moduledagger.chat;
 
 import com.pitreskikh.moduledagger.common.scope.ChatScope;
 
-import dagger.Component;
+import dagger.Subcomponent;
 
-@Component(modules = {ChatModule.class})
+@Subcomponent
 @ChatScope
 public interface ChatComponent {
 

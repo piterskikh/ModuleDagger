@@ -2,12 +2,10 @@ package com.pitreskikh.moduledagger.common;
 
 import com.pitreskikh.moduledagger.common.scope.CommonScope;
 
-import dagger.Component;
+import dagger.Subcomponent;
 
-@Component(modules = {CommonModule.class})
+@Subcomponent
 @CommonScope
 public interface CommonComponent {
-
-
     void inject(CommonObject commonObject);
 }
