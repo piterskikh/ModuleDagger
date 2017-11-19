@@ -1,9 +1,8 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.pitreskikh.moduledagger"
         minSdkVersion 19
         targetSdkVersion 27
         buildToolsVersion '27.0.1'
@@ -22,11 +21,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    compile project(':chat')
-
+    compile project(':common')
     //noinspection GradleDynamicVersion
     annotationProcessor 'com.google.dagger:dagger-compiler:2+'
+
 }
