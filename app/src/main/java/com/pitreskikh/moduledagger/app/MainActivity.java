@@ -9,14 +9,18 @@ import com.pitreskikh.moduledagger.common.CommonObject;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView = (TextView) findViewById(R.id.simpleText);
 
-        textView.append(new CommonObject().getCommonText().getStr());
+        TextView textView = findViewById(R.id.simpleText);
+
+        CommonObject commonObject = new CommonObject();
+
+        textView.append(commonObject.getCommonText().getStr());
 
 
 

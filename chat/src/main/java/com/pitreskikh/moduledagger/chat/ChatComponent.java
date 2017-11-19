@@ -9,4 +9,5 @@ import dagger.Component;
 public interface ChatComponent {
 
     void inject(ChatObject chatObject);
+
 }

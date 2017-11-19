@@ -8,6 +8,7 @@ public class ChatObject {
     @Inject
     ChatText chatText;
 
+
     public ChatObject() {
         Chat.getChatComponent().inject(this);
     }
@@ -15,4 +16,6 @@ public class ChatObject {
     public ChatText getChatText() {
         return chatText;
     }
+
+
 }
