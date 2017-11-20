@@ -11,8 +11,8 @@ import dagger.Component;
 @Component(modules = {AppModule.class, ChatModule.class})
 @Singleton
 public interface AppComponent {
-    CommonComponent plusCommonComponent();
-    ChatComponent plusChatComponent();
+    CommonComponent.Builder commonComponentBuilder();
+    ChatComponent.Builder chatComponentBuilder();
 
 
     void inject(MainActivity mainActivity);

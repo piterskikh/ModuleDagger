@@ -7,6 +7,10 @@ import dagger.Subcomponent;
 @Subcomponent
 @ModuleScope
 public interface ChatComponent {
+    @Subcomponent.Builder
+    interface Builder {
+        ChatComponent build();
+    }
 
     void inject(ChatObject chatObject);
 

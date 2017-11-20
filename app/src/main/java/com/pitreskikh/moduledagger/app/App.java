@@ -26,7 +26,7 @@ public class App extends Application {
         super.onCreate();
 
         appComponent = DaggerAppComponent.builder().build();
-        Common.setCommonComponent(appComponent.plusCommonComponent());
-        Chat.setChatComponent(appComponent.plusChatComponent());
+        Common.setCommonComponent(appComponent.commonComponentBuilder().build());
+        Chat.setChatComponent(appComponent.chatComponentBuilder().build());
     }
 }
