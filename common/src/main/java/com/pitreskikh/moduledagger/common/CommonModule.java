@@ -11,7 +11,6 @@ public class CommonModule {
 
     @Singleton
     @Provides
-    @Second
     CommonText getCommonText(@Named("name") String commonText) {
         return new CommonText(commonText);
     }
