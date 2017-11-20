@@ -1,11 +1,11 @@
 package com.pitreskikh.moduledagger.chat;
 
-import com.pitreskikh.moduledagger.common.scope.ChatScope;
+import com.pitreskikh.moduledagger.common.ModuleScope;
 
 import dagger.Subcomponent;
 
 @Subcomponent
-@ChatScope
+@ModuleScope
 public interface ChatComponent {
 
     void inject(ChatObject chatObject);

@@ -3,10 +3,7 @@ package com.pitreskikh.moduledagger.app;
 
 import android.app.Application;
 
-import com.pitreskikh.moduledagger.app.chat.AppChatComponent;
-import com.pitreskikh.moduledagger.app.chat.AppChatModule;
-import com.pitreskikh.moduledagger.app.common.AppCommonComponent;
-import com.pitreskikh.moduledagger.app.common.DaggerAppCommonComponent;
+
 import com.pitreskikh.moduledagger.chat.Chat;
 import com.pitreskikh.moduledagger.common.Common;
 
@@ -26,12 +23,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
 
-
         super.onCreate();
 
-        AppCommonComponent appCommonComponent = DaggerAppCommonComponent.builder().build();
-        AppChatComponent appChatComponent = appCommonComponent.plusAppChatComponent(new AppChatModule());
-        Common.setCommonComponent(appCommonComponent);
-        Chat.setChatComponent(appChatComponent);
+        appComponent = DaggerAppComponent.builder().build();
+        Common.setCommonComponent(appComponent.plusCommonComponent());
+        Chat.setChatComponent(appComponent.plusChatComponent());
     }
 }
