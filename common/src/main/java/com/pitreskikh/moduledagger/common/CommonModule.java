@@ -1,5 +1,6 @@
 package com.pitreskikh.moduledagger.common;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -10,7 +11,8 @@ public class CommonModule {
 
     @Singleton
     @Provides
-    CommonText getCommonText() {
-        return new CommonText("Text in common text is provided by Common module");
+    @Second
+    CommonText getCommonText(@Named("name") String commonText) {
+        return new CommonText(commonText);
     }
 }

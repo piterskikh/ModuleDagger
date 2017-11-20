@@ -10,8 +10,8 @@ public class ChatModule {
 
     @Singleton
     @Provides
-    ChatText getChatText() {
-        return new ChatText("Text in chat text is provided by Chat module");
+    ChatText getChatText(String chatText) {
+        return new ChatText(chatText);
     }
 
 }

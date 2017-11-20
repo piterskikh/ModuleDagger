@@ -16,16 +16,17 @@ public class App extends Application {
         return appComponent;
     }
 
-    public static void setAppComponent(AppComponent appComponent) {
-        App.appComponent = appComponent;
-    }
-
     @Override
     public void onCreate() {
 
         super.onCreate();
 
-        appComponent = DaggerAppComponent.builder().build();
+        appComponent = DaggerAppComponent
+                .builder()
+                .chatText("Text in Chat text is provided by Application")
+                .commonText("Text in Common text is provided by Application")
+                .build();
+
         Common.setCommonComponent(appComponent.commonComponentBuilder().build());
         Chat.setChatComponent(appComponent.chatComponentBuilder().build());
     }
